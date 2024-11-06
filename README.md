@@ -30,6 +30,8 @@ This project is a content management system with AI-enhanced features, allowing 
 - Frontend: React, TypeScript
 - AI Integration: OpenAI API
 - Docker: Containerised environment using Docker and Docker Compose
+
+  
 ##project-Structure
 ├── backend/
 │   ├── index.ts             # Main server file
