@@ -33,25 +33,26 @@ This project is a content management system with AI-enhanced features, allowing 
 
   
 ##project-Structure
-├── backend/
-│   ├── index.ts             # Main server file
-│   ├── controllers/         # API controllers
-│   ├── models/              # Database models
-│   ├── services/            # AI integration and other services
-│   ├── Dockerfile           # Docker configuration
-│   └── ...
-├── frontend/
-│   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── services/        # API calls
-│   │   └── ...
-│   ├── Dockerfile           # Docker configuration for frontend
-│   └── ...
-└── docker-compose.yml       # Docker Compose setup
+- backend/
+  - index.ts              # Main server file
+  - controllers/          # API controllers
+  - models/               # Database models
+  - services/             # AI integration and other services
+  - Dockerfile            # Docker configuration
+- frontend/
+  - src/
+    - components/         # React components
+    - services/           # API calls
+  - Dockerfile            # Docker configuration for frontend
+- docker-compose.yml      # Docker Compose setup
+
+  
 ##prerequisites
 - Node.js v18+
 - Docker
 - MongoDB is managed within Docker, so no external setup is needed.
+
+  
 ## Installation
 
 
