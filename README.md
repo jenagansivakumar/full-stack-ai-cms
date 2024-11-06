@@ -1,7 +1,7 @@
 
-# go-kafka
+# AI-Enhanced Content Workflow Manager
 
-AI-Enhanced Content Workflow Manager
+
 
 This project is a content management system with AI-enhanced features, allowing for CRUD operations, automated tagging using OpenAI, and content recommendations. It’s fully containerized using Docker for ease of deployment.
 
