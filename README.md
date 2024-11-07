@@ -20,7 +20,7 @@ This project is a content management system with AI-enhanced features, allowing 
 - [Future Enhancements](#future-enhancements)
 - [Commands Summary](#commands-summary)
 - [Development](#development)
-- [Docker][#docker]
+- [Docker](#docker)
 - 
 
 ## Features
