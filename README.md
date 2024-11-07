@@ -79,7 +79,14 @@ cd frontend
 npm install
 ```
 
-## environment-variables:
+## Setting Up the API Key
+This project requires an OpenAI API key to work. Please follow these steps:
+
+```
+1. Sign up for an OpenAI account and generate an API key.
+2. Create a `.env` file in the project root directory.
+
+```
 
 Create a .env file in ai-enhanced_content_workflow_manager_backend and add the following:
 
