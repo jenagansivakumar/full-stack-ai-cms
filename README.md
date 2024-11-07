@@ -61,7 +61,7 @@ This project is a content management system with AI-enhanced features, allowing 
 
 1. Clone the repository:
 ```bash 
-git clone https://github.com/jenagansivakumar/ai-enhanced_content_workflow_manager.git
+git clone git@github.com:jenagansivakumar/full-stack-ai-cms.git
 ```
 
 2. Install Dependencies:
