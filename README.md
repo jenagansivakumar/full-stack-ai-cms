@@ -82,7 +82,7 @@ npm install
 ## Setting Up the API Key
 This project requires an OpenAI API key to work. Please follow these steps:
 1. Sign up for an OpenAI account and generate an API key.
-2. Create a `.env` file in the project root directory and add the following:
+2. Create a `.env` file in the backend root directory and add the following:
 ```bash
 AI_API_KEY=<Your OpenAI API Key>
 DATABASE_URL=mongodb://mongo:27017/ai_content_management
