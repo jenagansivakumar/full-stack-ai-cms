@@ -18,6 +18,11 @@ This project is a content management system with AI-enhanced features, allowing 
 - [Docker Setup](#docker-setup)
 - [API Endpoints](#api-endpoints)
 - [Future Enhancements](#future-enhancements)
+- [Commands Summary](#commands-summary)
+- [Development](#development)
+- [Docker][#docker]
+- 
+
 ## Features
 
 - CRUD Operations: Easily add, update, delete, and view content.
@@ -53,7 +58,7 @@ This project is a content management system with AI-enhanced features, allowing 
 - MongoDB is managed within Docker, so no external setup is needed.
 
   
-## Installation
+##installation
 
 
 1. Clone the repository:
@@ -76,7 +81,7 @@ cd ../ai-enhanced_content_workflow_manager_frontend
 npm install
 ```
 
-Environment Variables:
+##environment-variables:
 
 Create a .env file in ai-enhanced_content_workflow_manager_backend and add the following:
 
@@ -86,7 +91,7 @@ DATABASE_URL=mongodb://mongo:27017/ai_content_management
 NODE_ENV=production
 ```
 
-Usage
+##usage
 Running Locally
 1. Start the MongoDB database:
 ```bash
@@ -104,7 +109,7 @@ npm start
 ```
 
 
-Docker Setup
+##docker-setup
 This project is fully Dockerized with both frontend and backend components. Follow these steps to get started.
 
 1. Ensure Docker is running.
@@ -124,7 +129,7 @@ To stop the services:
 docker compose down
 ```
 
-## API Endpoints
+##api-endpoints
 
 ### Base URL
 `http://localhost:4000`
@@ -141,7 +146,7 @@ docker compose down
 
 ---
 
-## Future Enhancements
+##future-enhancements
 
 - **Advanced AI Features:** Incorporate additional AI models for deeper content analysis.
 - **Improved Search Algorithms:** Implement fuzzy matching or semantic search for better search results.
@@ -150,22 +155,22 @@ docker compose down
 
 ---
 
-## Commands Summary
+##commands-summary
 
-### Development
+##development
 
 - Run backend: `npm run dev`
 - Run frontend: `npm start`
 - Run MongoDB: `docker run -d -p 27017:27017 --name mongo mongo:5`
 
-### Docker
+##docker
 
 - Build and run containers: `docker compose up --build`
 - Stop containers: `docker compose down`
 
 ---
 
-## Contact
+##contact
 
 If you have any questions or suggestions, feel free to reach out!
 
