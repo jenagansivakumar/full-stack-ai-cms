@@ -18,9 +18,7 @@ This project is a content management system with AI-enhanced features, allowing 
 - [Docker Setup](#docker-setup)
 - [API Endpoints](#api-endpoints)
 - [Future Enhancements](#future-enhancements)
-- [Commands Summary](#commands-summary)
-- [Development](#development)
-- [Docker](#docker)
+
   
 
 ## Features
