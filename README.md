@@ -35,7 +35,7 @@ This project is a content management system with AI-enhanced features, allowing 
 - Docker: Containerised environment using Docker and Docker Compose
 
   
-##project-Structure
+## project-Structure
 - backend/
   - index.ts              # Main server file
   - controllers/          # API controllers
@@ -50,13 +50,13 @@ This project is a content management system with AI-enhanced features, allowing 
 - docker-compose.yml      # Docker Compose setup
 
   
-##prerequisites
+## prerequisites
 - Node.js v18+
 - Docker
 - MongoDB is managed within Docker, so no external setup is needed.
 
   
-##installation
+## installation
 
 
 1. Clone the repository:
