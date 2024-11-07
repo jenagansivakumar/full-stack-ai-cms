@@ -21,7 +21,7 @@ This project is a content management system with AI-enhanced features, allowing 
 - [Commands Summary](#commands-summary)
 - [Development](#development)
 - [Docker](#docker)
-- 
+  
 
 ## Features
 
