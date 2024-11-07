@@ -79,7 +79,7 @@ cd ../ai-enhanced_content_workflow_manager_frontend
 npm install
 ```
 
-##environment-variables:
+## environment-variables:
 
 Create a .env file in ai-enhanced_content_workflow_manager_backend and add the following:
 
@@ -89,7 +89,7 @@ DATABASE_URL=mongodb://mongo:27017/ai_content_management
 NODE_ENV=production
 ```
 
-##usage
+## usage
 Running Locally
 1. Start the MongoDB database:
 ```bash
@@ -107,7 +107,7 @@ npm start
 ```
 
 
-##docker-setup
+## docker-setup
 This project is fully Dockerized with both frontend and backend components. Follow these steps to get started.
 
 1. Ensure Docker is running.
@@ -127,7 +127,7 @@ To stop the services:
 docker compose down
 ```
 
-##api-endpoints
+## api-endpoints
 
 ### Base URL
 `http://localhost:4000`
@@ -144,7 +144,7 @@ docker compose down
 
 ---
 
-##future-enhancements
+## future-enhancements
 
 - **Advanced AI Features:** Incorporate additional AI models for deeper content analysis.
 - **Improved Search Algorithms:** Implement fuzzy matching or semantic search for better search results.
@@ -153,22 +153,22 @@ docker compose down
 
 ---
 
-##commands-summary
+## commands-summary
 
-##development
+## development
 
 - Run backend: `npm run dev`
 - Run frontend: `npm start`
 - Run MongoDB: `docker run -d -p 27017:27017 --name mongo mongo:5`
 
-##docker
+## docker
 
 - Build and run containers: `docker compose up --build`
 - Stop containers: `docker compose down`
 
 ---
 
-##contact
+## contact
 
 If you have any questions or suggestions, feel free to reach out!
 
