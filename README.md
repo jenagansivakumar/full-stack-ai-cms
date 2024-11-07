@@ -69,13 +69,13 @@ Navigate to both backend and frontend folders to install dependencies.
 
 For Backend:
 ```bash
-cd ai-enhanced_content_workflow_manager_backend
+cd backend
 npm install
 ```
 
 For Frontend:
 ```bash
-cd ../ai-enhanced_content_workflow_manager_frontend
+cd frontend
 npm install
 ```
 
