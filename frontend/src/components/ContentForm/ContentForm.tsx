@@ -15,6 +15,7 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
     const [body, setBody] = useState("");
     const [status, setStatus] = useState<ContentData['status']>("draft");
     const [tags, setTags] = useState<string[]>([]);
+    const [error, setError] = useState<string>("")
 
     const generateTags = async () => {
         try {
@@ -29,6 +30,13 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
         e.preventDefault();
 
         await generateTags();
+
+        if (!title || !body){
+            setError("Title and Body are required!")
+        }
+
+        setError("")
+        console.log("Form submitted with:", { title, body });
 
         const newContent: ContentData = {
             title,
@@ -53,7 +61,6 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
     <>
         <div className="form-container">
             <h1 className="form-title">AI Powered Task Workflow</h1>
-            <h3 className="form-title">Add Your Content Here</h3>
             <form onSubmit={handleSubmit}>
                 <label className="form-label"> Title
                     <input
@@ -80,6 +87,7 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
                         <option value="published">Published</option>
                     </select>
                 </label>
+                {error && <p>{error}</p>}
                 <button type="submit" className="submit-button">Submit</button>
             </form>
         </div>
