@@ -50,29 +50,31 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
     };
 
     return (
+    <>
         <div className="form-container">
-            <h2 className="form-title">Add New Content</h2>
+            <h1 className="form-title">AI Powered Content Workflow</h1>
+            <h2 className="form-title">AI Powered Content Workflow</h2>
             <form onSubmit={handleSubmit}>
                 <label className="form-label"> Title
                     <input
                         className="form-input"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                    />
+                        />
                 </label>
                 <label className="form-label"> Body 
                     <input 
                         className="form-input"
                         value={body} 
                         onChange={(e) => setBody(e.target.value)} 
-                    />
+                        />
                 </label>
                 <label className="form-label"> Set Status 
                     <select 
                         className="form-select"
                         value={status} 
                         onChange={(e) => setStatus(e.target.value as ContentData['status'])}
-                    >
+                        >
                         <option value="draft">Draft</option>
                         <option value="review">Review</option>
                         <option value="published">Published</option>
@@ -81,5 +83,6 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
                 <button type="submit" className="submit-button">Submit</button>
             </form>
         </div>
+    </>
     );
 }
