@@ -10,7 +10,6 @@ interface ContentData {
     status: "draft" | "review" | "published";
     tags: string[];
 }
-
 export default function ContentForm({ onContentAdded }: { onContentAdded: () => void }) {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
@@ -29,23 +28,18 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        await generateTags();
-
         if (!title || !body){
-            setError("Title and Body are required!")
+            setError("Title and body are required to post")
             return
         }
-
-        setError("")
-        
+        await generateTags();   
         const newContent: ContentData = {
             title,
             body,
             status,
             tags,
         };
-
+        
         try {
             await addContent(newContent);
             onContentAdded();
@@ -56,6 +50,7 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
         } catch (error) {
             console.error("Error adding content:", error);
         }
+        setError("")
     };
 
     return (
@@ -88,7 +83,8 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
                         <option value="published">Published</option>
                     </select>
                 </label>
-                {error && <Error message={error}/>}
+               {error && <Error message={error} />}
+
                 <button type="submit" className="submit-button">Submit</button>
             </form>
         </div>
