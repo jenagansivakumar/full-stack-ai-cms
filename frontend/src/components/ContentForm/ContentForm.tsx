@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { addContent } from "../../api/contentApi";
 import './ContentForm.css';
 import axios from 'axios';
+import Error from "../Error"
 
 interface ContentData {
     title: string;
@@ -33,11 +34,11 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
 
         if (!title || !body){
             setError("Title and Body are required!")
+            return
         }
 
         setError("")
-        console.log("Form submitted with:", { title, body });
-
+        
         const newContent: ContentData = {
             title,
             body,
@@ -87,7 +88,7 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
                         <option value="published">Published</option>
                     </select>
                 </label>
-                {error && <p>{error}</p>}
+                {error && <Error message={error}/>}
                 <button type="submit" className="submit-button">Submit</button>
             </form>
         </div>
