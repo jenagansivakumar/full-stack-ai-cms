@@ -52,8 +52,8 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
     return (
     <>
         <div className="form-container">
-            <h1 className="form-title">AI Powered Content Workflow</h1>
-            <h2 className="form-title">AI Powered Content Workflow</h2>
+            <h1 className="form-title">AI Powered Task Workflow</h1>
+            <h3 className="form-title">Add Your Content Here</h3>
             <form onSubmit={handleSubmit}>
                 <label className="form-label"> Title
                     <input
