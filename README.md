@@ -76,7 +76,7 @@ npm install
 For Frontend:
 ```bash
 cd frontend
-npm install
+npm install --legacy-peer-deps
 ```
 
 ## Setting Up the API Key
