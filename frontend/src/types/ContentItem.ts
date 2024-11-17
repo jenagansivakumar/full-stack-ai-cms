@@ -1,5 +1,5 @@
 export default interface ContentItem {
-  _id: string; // Add this line
+  _id: string;
   title: string;
   body: string;
   status: "draft" | "review" | "published";
