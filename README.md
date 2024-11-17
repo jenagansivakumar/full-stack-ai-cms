@@ -86,7 +86,7 @@ This project requires an OpenAI API key to work. Please follow these steps:
 ```bash
 AI_API_KEY=<Your OpenAI API Key>
 DATABASE_URL=mongodb://mongo:27017/ai_content_management
-NODE_ENV=production
+PORT=4000
 ```
 
 ## usage
