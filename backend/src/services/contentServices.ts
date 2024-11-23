@@ -7,6 +7,16 @@ dotenv.config();
 const AI_API_KEY = process.env.AI_API_KEY;
 console.log(AI_API_KEY)
 
+export const getContentById = async(id: string) => {
+    try{
+        const result = await Content.findById(id)
+        if (result === null){
+        }
+    } catch (error){
+        throw new Error("Failed to find content by id")
+    }
+}
+
 export async function createContent(data: ContentData) {
     const tags = await generateTagsWithAI(data.title, data.body);
     const newContent = new Content({ ...data, tags });

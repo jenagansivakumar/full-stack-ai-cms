@@ -5,6 +5,8 @@ import axios from 'axios';
 
 const AI_API_KEY = process.env.AI_API_KEY;
 
+
+
 export const getAllContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         const content = await contentService.fetchAllContent();
