@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import * as contentService from '../services/contentServices';
 import Content from '../models/contentModels'; 
 import axios from 'axios';
+import { timeStamp } from 'console';
 
 const AI_API_KEY = process.env.AI_API_KEY;
 
@@ -17,12 +18,24 @@ export const getAllContent = async (req: Request, res: Response, next: NextFunct
 };
 
 export const handleDeleteContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    
+
     try {
-       const content = await contentService.getContentById(req.params.id)
+        const content = await contentService.getContentById(req.params.id)
         if (content === null){
             throw new Error("Content not found")
         }
+       await contentService.deleteContent(req.params.id)
+       const slackMessage = (`${content.title} has been deleted at ${new Date().toISOString()} (ID: ${content._id}) `)
+
+       try {
+
+           await axios.post("https://hooks.slack.com/services/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", {text: slackMessage})
+        }
+        catch (error) {
+            console.log(error)
+        }
+        res.status(204).end()
+            
     } catch (error) {
         const errorMessage = (error as Error).message
         if (errorMessage === "Content not found"){
