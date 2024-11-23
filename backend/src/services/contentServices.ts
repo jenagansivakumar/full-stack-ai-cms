@@ -11,6 +11,7 @@ export const getContentById = async(id: string) => {
     try{
         const result = await Content.findById(id)
         if (result === null){
+            throw new Error("Content not found")
         }
     } catch (error){
         throw new Error("Failed to find content by id")

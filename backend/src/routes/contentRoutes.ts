@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/content', contentController.getAllContent);
 router.post('/content', contentController.createContent);
-router.delete('/content/:id', contentController.deleteContent);
+router.delete('/content/:id', contentController.handleDeleteContent);
 router.post('/generate-tags', contentController.generateTagsWithAI);
 
 export default router;

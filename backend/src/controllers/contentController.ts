@@ -16,7 +16,7 @@ export const getAllContent = async (req: Request, res: Response, next: NextFunct
     }
 };
 
-export const deleteContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const handleDeleteContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         await contentService.deleteContent(req.params.id);
         res.status(204).end();
