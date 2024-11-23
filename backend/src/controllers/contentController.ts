@@ -17,11 +17,13 @@ export const getAllContent = async (req: Request, res: Response, next: NextFunct
 };
 
 export const handleDeleteContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    
     try {
-        await contentService.deleteContent(req.params.id);
-        res.status(204).end();
+       const content = await contentService.getContentById(req.params.id)
+        if (content === null){
+            throw new 
+        }
     } catch (error) {
-        next(error);
     }
 };
 
