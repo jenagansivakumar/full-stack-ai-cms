@@ -9,13 +9,16 @@ console.log(AI_API_KEY)
 
 export const getContentById = async(id: string) => {
     try{
-        const result = await Content.findById(id)
-        if (result === null){
+        const content = await Content.findById(id)
+        if (content === null){
             throw new Error("Content not found")
         }
+        return content
     } catch (error){
-        throw new Error("Failed to find content by id")
+        const errorMessage = (error as Error).message || "Unknown error"
+        throw new Error(`Failed to find content by id: ${errorMessage}`)
     }
+    
 }
 
 export async function createContent(data: ContentData) {

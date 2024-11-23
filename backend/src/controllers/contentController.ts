@@ -21,9 +21,15 @@ export const handleDeleteContent = async (req: Request, res: Response, next: Nex
     try {
        const content = await contentService.getContentById(req.params.id)
         if (content === null){
-            throw new 
+            throw new Error("Content not found")
         }
     } catch (error) {
+        const errorMessage = (error as Error).message
+        if (errorMessage === "Content not found"){
+            res.status(404).json({message: "Content not found"})
+        } else {
+            next(error)
+        }
     }
 };
 
