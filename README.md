@@ -3,7 +3,7 @@
 
 
 
-This project is a content management system with AI-enhanced features, allowing for CRUD operations, automated tagging using OpenAI, and content recommendations. It’s fully containerized using Docker for ease of deployment.
+This project is a content management system with AI-enhanced features, allowing for CRUD operations, automated tagging using OpenAI, and content recommendations. It’s fully containerised using Docker for ease of deployment.
 
 
 
@@ -26,7 +26,7 @@ This project is a content management system with AI-enhanced features, allowing 
 - CRUD Operations: Easily add, update, delete, and view content.
 - AI-Powered Tagging: Generates tags based on content using OpenAI API.
 - Content Recommendations: Provides recommendations based on keywords.
-- Dockerized Setup: All components are containerized for streamlined deployment.
+- Dockerised Setup: All components are containerised for streamlined deployment.
 ## tech-stack
 
 - Backend: Node.js, Express, MongoDB
@@ -111,7 +111,7 @@ npm start
 
 
 ## docker-setup
-This project is fully Dockerized with both frontend and backend components. Follow these steps to get started.
+This project is fully Dockerised with both frontend and backend components. Follow these steps to get started.
 
 1. Ensure Docker is running.
 2. From the ai-enhanced_content_workflow_manager_backend folder, run the following:
@@ -152,7 +152,7 @@ docker compose down
 - **Advanced AI Features:** Incorporate additional AI models for deeper content analysis.
 - **Improved Search Algorithms:** Implement fuzzy matching or semantic search for better search results.
 - **User Authentication:** Add user roles and authentication to enhance security.
-- **Customizable Tagging:** Allow users to customize the tag generation.
+- **Customisable Tagging:** Allow users to customise the tag generation.
 
 ---
 
