@@ -10,6 +10,8 @@ services:
       - ./backend/.env
     depends_on:
       - mongo
+    networks:
+      - app_network
 
   mongo:
     image: mongo:5
@@ -17,6 +19,8 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - app_network
 
   frontend:
     build:
@@ -25,6 +29,12 @@ services:
       - "3000:3000"
     env_file:
       - ./frontend/.env
+    networks:
+      - app_network
 
 volumes:
   mongo_data:
+
+networks:
+  app_network:
+    driver: bridge

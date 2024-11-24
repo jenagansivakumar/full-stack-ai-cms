@@ -3,8 +3,15 @@ import * as contentService from '../services/contentServices';
 import Content from '../models/contentModels'; 
 import axios from 'axios';
 import { timeStamp } from 'console';
+import { configDotenv } from 'dotenv';
 
+configDotenv()
 const AI_API_KEY = process.env.AI_API_KEY;
+
+const slack_webhook = process.env.SLACK_WEBHOOK
+if (!slack_webhook) {
+    throw new Error("SLACK_WEBHOOK environment variable is not defined");
+}
 
 
 
@@ -18,6 +25,8 @@ export const getAllContent = async (req: Request, res: Response, next: NextFunct
 };
 
 export const handleDeleteContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    console.log("Backend delete handler triggered for ID:", req.params.id);
+
 
     try {
         const content = await contentService.getContentById(req.params.id)
@@ -29,7 +38,9 @@ export const handleDeleteContent = async (req: Request, res: Response, next: Nex
 
        try {
 
-           await axios.post("https://hooks.slack.com/services/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", {text: slackMessage})
+           const response =  await axios.post(slack_webhook, {text: slackMessage})
+           console.log("Slack response:", response.data);
+
         }
         catch (error) {
             console.log(error)
