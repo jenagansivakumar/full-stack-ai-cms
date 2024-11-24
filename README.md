@@ -84,9 +84,12 @@ This project requires an OpenAI API key to work. Please follow these steps:
 1. Sign up for an OpenAI account and generate an API key.
 2. Create a `.env` file in the backend root directory and add the following:
 ```bash
-AI_API_KEY=<Your OpenAI API Key>
-DATABASE_URL=mongodb://mongo:27017/ai_content_management
+AI_API_KEY=<your_openai_key>
+MONGO_URI_LOCAL=mongodb://localhost:27017/ai_content_management
+MONGO_URI_DOCKER=mongodb://mongo:27017/ai_content_management
+NODE_ENV=development
 PORT=4000
+SLACK_WEBHOOK=<your_slack_endpoint>
 ```
 
 ## usage
