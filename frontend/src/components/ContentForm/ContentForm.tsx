@@ -19,7 +19,7 @@ export default function ContentForm({ onContentAdded }: { onContentAdded: () => 
 
     const generateTags = async () => {
         try {
-            const response = await axios.post('http://localhost:4000/api/generate-tags', { title, body });
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/generate-tags`, { title, body });
             setTags(response.data.tags);
         } catch (error) {
             console.error("Error generating tags:", error);
