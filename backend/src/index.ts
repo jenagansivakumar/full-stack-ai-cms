@@ -18,7 +18,7 @@ app.use((req, res, next) => {
     console.log("Incoming request:", req.method, req.path);
     next();
 });
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: ['http://localhost:3000', 'http://frontend-content-workflow-bucket.s3-website.eu-west-2.amazonaws.com'] }));
 app.use(express.json());
 
 connectDB();
