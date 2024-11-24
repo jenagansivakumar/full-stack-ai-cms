@@ -1,6 +1,8 @@
 
 # AI-Enhanced Content Workflow Manager
 
+http://frontend-content-workflow-bucket.s3-website.eu-west-2.amazonaws.com/
+
 
 
 This project is a content workflow manager with AI-enhanced features, enabling CRD operations, automated tagging using OpenAI, and content recommendations. It is fully containerised using Docker for seamless deployment and integrates with Slack's webhooks to send notifications upon content deletion.
