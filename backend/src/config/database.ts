@@ -14,16 +14,15 @@ const ContentSchema = new mongoose.Schema({
 const Content = mongoose.models.Content || mongoose.model('Content', ContentSchema);
 
 export const connectDB = async () => {
-    const mongoUri = process.env.MONGO_URI;
+    const mongoUri = process.env.NODE_ENV === 'development' ? process.env.MONGO_URI_LOCAL : process.env.MONGO_URI_DOCKER;
     if (!mongoUri) {
-        console.error("MONGO_URI environment variable is not set.");
+        console.error("MongoDB URI is not set.");
         process.exit(1);
     }
-
     if (!mongoose.connection.readyState) {
         try {
             await mongoose.connect(mongoUri);
-            console.log("Connected to MongoDB successfully!");
+            console.log(`Connected to MongoDB: ${mongoUri}`);
         } catch (error) {
             console.error("Error connecting to MongoDB:", error);
             process.exit(1);
@@ -33,14 +32,12 @@ export const connectDB = async () => {
 
 export const addSampleContent = async () => {
     await connectDB();
-
     const sampleData = new Content({
         title: "Sample Content",
         body: "This is a sample document for testing purposes.",
         status: "draft",
         tags: ["sample", "test"],
     });
-
     try {
         await sampleData.save();
         console.log("Sample content added to the database!");
