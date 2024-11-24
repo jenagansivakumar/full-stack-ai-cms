@@ -23,10 +23,11 @@ This project is a content workflow manager with AI-enhanced features, enabling C
 
 ## Features
 
-- CRUD Operations: Easily add, update, delete, and view content.
+- CRD Operations: Easily add, delete, and view content.
 - AI-Powered Tagging: Generates tags based on content using OpenAI API.
-- Content Recommendations: Provides recommendations based on keywords.
 - Dockerised Setup: All components are containerised for streamlined deployment.
+- Slack Integration: Sends notifications to a Slack channel upon content deletion using Slack webhooks.
+- 
 ## tech-stack
 
 - Backend: Node.js, Express, MongoDB
