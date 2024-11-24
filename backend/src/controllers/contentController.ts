@@ -2,8 +2,16 @@ import { Request, Response, NextFunction } from 'express';
 import * as contentService from '../services/contentServices';
 import Content from '../models/contentModels'; 
 import axios from 'axios';
+import { timeStamp } from 'console';
+import { configDotenv } from 'dotenv';
 
+configDotenv()
 const AI_API_KEY = process.env.AI_API_KEY;
+
+const slack_webhook = process.env.SLACK_WEBHOOK
+if (!slack_webhook) {
+    throw new Error("SLACK_WEBHOOK environment variable is not defined");
+}
 
 
 
@@ -16,12 +24,36 @@ export const getAllContent = async (req: Request, res: Response, next: NextFunct
     }
 };
 
-export const deleteContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const handleDeleteContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    console.log("Backend delete handler triggered for ID:", req.params.id);
+
+
     try {
-        await contentService.deleteContent(req.params.id);
-        res.status(204).end();
+        const content = await contentService.getContentById(req.params.id)
+        if (content === null){
+            throw new Error("Content not found")
+        }
+       await contentService.deleteContent(req.params.id)
+       const slackMessage = (`${content.title} has been deleted at ${new Date().toISOString()} (ID: ${content._id}) `)
+
+       try {
+
+           const response =  await axios.post(slack_webhook, {text: slackMessage})
+           console.log("Slack response:", response.data);
+
+        }
+        catch (error) {
+            console.log(error)
+        }
+        res.status(204).end()
+            
     } catch (error) {
-        next(error);
+        const errorMessage = (error as Error).message
+        if (errorMessage === "Content not found"){
+            res.status(404).json({message: "Content not found"})
+        } else {
+            next(error)
+        }
     }
 };
 

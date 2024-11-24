@@ -6,12 +6,18 @@ import { connectDB } from './config/database';
 import errorHandler from './middlewares/errorHandler';
 import Content from './models/contentModels';
 
-
-
 dotenv.config();
 const app = express();
 const cron = require('node-cron');
 
+app.get('/ping', (req, res) => {
+    res.send('pong');
+});
+
+app.use((req, res, next) => {
+    console.log("Incoming request:", req.method, req.path);
+    next();
+});
 app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json());
 

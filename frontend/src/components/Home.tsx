@@ -32,6 +32,8 @@ const Home: React.FC = () => {
     const handleDelete = async (id: string) => {
         await deleteContent(id);
         setContent(content.filter(item => item._id !== id)); 
+        console.log("Delete request received for ID:", id);
+
     };
 
     return (
