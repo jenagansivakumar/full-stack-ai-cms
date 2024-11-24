@@ -3,7 +3,7 @@
 
 
 
-This project is a content management system with AI-enhanced features, allowing for CRUD operations, automated tagging using OpenAI, and content recommendations. It’s fully containerised using Docker for ease of deployment.
+This project is a content workflow manager with AI-enhanced features, enabling CRUD operations, automated tagging using OpenAI, and content recommendations. It is fully containerised using Docker for seamless deployment and integrates with Slack's webhooks to send notifications upon content deletion.
 
 
 
@@ -32,6 +32,7 @@ This project is a content management system with AI-enhanced features, allowing 
 - Backend: Node.js, Express, MongoDB
 - Frontend: React, TypeScript
 - AI Integration: OpenAI API
+- Slack Integration: Slack Incoming Webhooks
 - Docker: Containerised environment using Docker and Docker Compose
 
   
