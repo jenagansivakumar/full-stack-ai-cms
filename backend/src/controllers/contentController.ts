@@ -13,8 +13,6 @@ if (!slack_webhook) {
     throw new Error("SLACK_WEBHOOK environment variable is not defined");
 }
 
-
-
 export const getAllContent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         const content = await contentService.fetchAllContent();
