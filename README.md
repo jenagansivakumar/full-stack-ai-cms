@@ -3,7 +3,7 @@
 
 
 
-This project is a content workflow manager with AI-enhanced features, enabling CRUD operations, automated tagging using OpenAI, and content recommendations. It is fully containerised using Docker for seamless deployment and integrates with Slack's webhooks to send notifications upon content deletion.
+This project is a content workflow manager with AI-enhanced features, enabling CRD operations, automated tagging using OpenAI, and content recommendations. It is fully containerised using Docker for seamless deployment and integrates with Slack's webhooks to send notifications upon content deletion.
 
 
 
